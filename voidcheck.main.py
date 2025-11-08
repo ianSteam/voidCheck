@@ -8,6 +8,13 @@ import schedule # type: ignore
 import time
 
 import random
+try:
+    open("seedlist.txt", "x")
+except:
+    print("file probably already created. ignoring...")
+else:
+    print("seed list file created.")
+
 open("seedlist.txt", "a").write("\n")
 runloop = 1
 run = 1

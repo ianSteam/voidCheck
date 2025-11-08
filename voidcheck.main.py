@@ -54,6 +54,8 @@ while run == 1:
         pyautogui.click(w / 2.9, h / 2.25)
         keyboard.write(f"{seedb}")
         pyautogui.click(w / 1.71, h / 1.55)
+        time.sleep(.5)
+        keyboard.press_and_release("f")
         runloop = 0
     elif runloop != 1 and pyautogui.pixel(int(w/2), int(h-50)) != (0, 0, 0):
         restart()
@@ -63,4 +65,5 @@ while pd == 1:
     #print(pyautogui.pixel(1179, 1388))
     if pyautogui.pixel(1029, 1388) != (0, 0, 0):
         print(pyautogui.pixel(1179, 1388))
+
 

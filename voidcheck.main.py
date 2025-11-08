@@ -40,7 +40,6 @@ def restart():
 
 schedule.every(30).minutes.do(restart2)
 while run == 1:
-    keyboard.press("right")
     #t = Timer(30 * 60, restart)
     #t.start()
     #t.join()
@@ -64,3 +63,4 @@ while pd == 1:
     #print(pyautogui.pixel(1179, 1388))
     if pyautogui.pixel(1029, 1388) != (0, 0, 0):
         print(pyautogui.pixel(1179, 1388))
+

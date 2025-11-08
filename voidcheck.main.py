@@ -6,34 +6,31 @@ import string
 import pyautogui  # type: ignore
 import schedule # type: ignore
 import time
-
+import tkinter as tk
+h = tk.Tk().winfo_screenheight()
+w = tk.Tk().winfo_screenwidth()
 import random
 try:
     open("seedlist.txt", "x")
 except:
     print("file probably already created. ignoring...")
-else:
-    print("seed list file created.")
 try:
     open("seedlistFAIL.txt", "x")
 except:
     print("file probably already created. ignoring...")
-else:
-    print("seed list file created.")
-
 open("seedlist.txt", "a").write("\n")
 runloop = 1
 run = 1
 md = 0
 pd = 0
-def restart2(x):
+def restart2():
     keyboard.press_and_release("alt + f4")
 #    print("reset moment")
     global seedb
     open("seedlistFAIL.txt", "a").write(f"{seedb}\n")
     global runloop
     runloop = 1
-def restart(x):
+def restart():
     keyboard.press_and_release("alt + f4")
 #    print("reset moment")
     global seedb
@@ -54,12 +51,12 @@ while run == 1:
         print(f"Using seed {seedb}...")
         os.popen(r'"c:/Users/unkl0kk/Desktop/SourceVoid Online/SourcevoidOnline.exe"')
         time.sleep(5)
-        pyautogui.click(885, 646)
+        pyautogui.click(w / 2.9, h / 2.25)
         keyboard.write(f"{seedb}")
-        pyautogui.click(1492, 933)
+        pyautogui.click(w / 1.71, h / 1.55)
         runloop = 0
-    elif runloop != 1 and pyautogui.pixel(1029, 1388) != (0, 0, 0):
-        restart(1)
+    elif runloop != 1 and pyautogui.pixel(int(w/2), int(h-50)) != (0, 0, 0):
+        restart()
 while md == 1:
     print(pyautogui.position())
 while pd == 1:
